@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/github/DSAA_homework/Binarytree/main.cpp" "D:/github/DSAA_homework/Binarytree/cmake-build-debug/CMakeFiles/Binarytree.dir/main.cpp.obj"
+  "C:/Users/iceQH/Documents/GitHub/DSAA_homework/Binarytree/main.cpp" "C:/Users/iceQH/Documents/GitHub/DSAA_homework/Binarytree/cmake-build-debug/CMakeFiles/Binarytree.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

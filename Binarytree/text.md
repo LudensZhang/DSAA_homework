@@ -55,3 +55,78 @@ int tree_height(bitree root){     //求二叉树高度
 }
 ```
 ### 6.45
+```
+Status find_x( bitree root, char x, bitree &tmp){       //找到x节点
+    if(!root)return ERROR;
+    if(root->data == x){
+        tmp = root;
+        return OK;
+    }
+    else{
+        if(find_x(root->lchild, x, tmp))return OK;
+        else if(find_x(root->rchild, x, tmp))return OK;
+    }
+}
+
+Status delete_child(bitree &root){       //删去子节点
+    if(!root)return ERROR;
+    delete_child(root->lchild);
+    delete_child(root->rchild);
+    root->lchild = NULL;
+    root->rchild = NULL;
+}
+```
+### 6.47
+```
+typedef struct Sqbitree{          //顺序储存二叉树
+    char data [MAX_TREE_SIZE];
+    int node_num;
+}Sqbitree;
+
+Status layer_display(Sqbitree root){      //层次遍历
+    int i = 0;
+    while(i < root.node_num){
+        if(root.data[i])
+            printf("%d", root.data[i]);
+        i++;
+    }
+}
+```
+### 6.49
+```
+Status is_completed(bitree root){     //判断是否为完全二叉树
+    if(!root)return OK;
+    if((!root->rchild && root->lchild) || (root->rchild && !root->lchild)){
+        printf("not completed");
+        judge++;
+        return 0;}
+    is_completed(root->lchild);
+    is_completed(root->rchild);
+}
+
+void judge_complete(){
+    if(!judge)printf("is completed");
+}
+```
+### 6.65
+```
+typedef struct{
+    char ch[maxsize];
+    int low, high;
+}sqlist;
+
+bitree BuTrPM(sqlist s1, sqlist s2){      //前序中序建树
+    int j,l1,l2,h1,h2; char c; node *p;
+    l1=s1.low;l2=s2.low;h1=s1.high;h2=s2.high;
+    if(l1 > h1 || l2 > h2)   return(0);
+    c=s1.ch[s1.low];
+    p=new(node); p->data=c;
+    for(j=s2.low;j<=s2.high;j++)
+        if(c==s2.ch[j]) break;
+    s1.low=l1+1; s1.high=l1+j-l2; s2.low=l2;s2.high=j-1;
+    p->lchild= BuTrPM(s1,s2);
+    s1.low=l1+j-l2+1; s1.high=h1; s2.low=j+1; s2.high=h2;
+    p->rchild= BuTrPM(s1,s2);         
+    return(p);
+}
+```
