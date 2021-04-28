@@ -43,6 +43,27 @@
     \node[rectangle,draw, right of=n20,node distance=0.7cm](n21){$\wedge$};
     \draw[-latex] (n19.center) -- (n20.west);
 
+    \node(4)[node distance=0.8cm, below of=3]{4};
+    \node[draw,rectangle,node distance=0.7cm,right of=4,minimum height=0.8cm](n22){$V_5$} ;
+    \node[rectangle,draw,right of=n22,node distance=0.7cm,minimum height=0.8cm](n23){};
+    \node[rectangle,draw, right of=n23](n24){3};
+    \node[rectangle,draw, right of=n24,node distance=0.7cm](n25){};
+    \node[rectangle,draw, right of=n25](n26){5};
+    \node[rectangle,draw, right of=n26,node distance=0.7cm](n27){$\wedge$};
+    \draw[-latex] (n23.center) -- (n24.west);
+    \draw[-latex] (n25.center) -- (n26.west);
+
+    \node(5)[node distance=0.8cm, below of=4]{5};
+    \node[draw,rectangle,node distance=0.7cm,right of=5,minimum height=0.8cm](n28){$V_6$} ;
+    \node[rectangle,draw,right of=n28,node distance=0.7cm,minimum height=0.8cm](n29){};
+    \node[rectangle,draw, right of=n29](n30){2};
+    \node[rectangle,draw, right of=n30,node distance=0.7cm](n31){};
+    \node[rectangle,draw, right of=n31](n32){3};
+    \node[rectangle,draw, right of=n32,node distance=0.7cm](n33){$\wedge$};
+    \draw[-latex] (n29.center) -- (n30.west);
+    \draw[-latex] (n31.center) -- (n32.west);
+
+
 \end{tikzpicture}
 
 \end{document}
